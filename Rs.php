@@ -41,9 +41,9 @@ class Rs extends Validator {
     }
 
     public function validateAttribute($model, $attribute) {
-        if (!property_exists($model, $this->bikAttribute)) {
+        if (!$model->hasAttribute($this->bikAttribute)) {
                 $model->addError($attribute, Yii::t('app', 'Для проверки поля "{attribute}" необходимо заполнить БИК', [
-                        'attribute' => $model->getAttributeLabel($attribute)
+                    'attribute' => $model->getAttributeLabel($attribute)
                 ]));
             return;
         }
