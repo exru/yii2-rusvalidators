@@ -21,6 +21,7 @@
 
 namespace exru\rusvalidators;
 
+use Yii;
 use yii\validators\Validator;
 
 class Snils extends Validator {

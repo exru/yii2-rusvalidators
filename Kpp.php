@@ -1,5 +1,6 @@
 <?php
 
+
 /*
  * Copyright (C) 2017 exru.
  *
@@ -21,7 +22,10 @@
 
 namespace exru\rusvalidators;
 
-class Kpp extends \yii\validators\Validator{
+use Yii;
+use yii\validators\Validator;
+
+class Kpp extends Validator{
     
     const MASK = '/^\d{4}[\dA-Z][\dA-Z]\d{3}$/u';
     

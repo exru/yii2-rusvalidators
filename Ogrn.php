@@ -22,6 +22,7 @@
 
 namespace exru\rusvalidators;
 
+use Yii;
 use yii\validators\Validator;
 
 class Ogrn extends Validator{
