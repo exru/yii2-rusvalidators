@@ -1,0 +1,21 @@
+{
+    "name": "exru/yii2-rusvalidators",
+    "description": "Set of validators for russian organizations",
+    "type": "library",
+    "require": {
+        "yiisoft/yii2": ">=2.0.7"
+    },
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "exru",
+            "email": "exerus0@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "exru\\rusvalidators\\": ""
+        }
+    }
+}
