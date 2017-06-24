@@ -28,7 +28,7 @@ class Kpp extends \yii\validators\Validator{
     public function validateAttribute($model, $attribute) {
         
         if (!preg_match(self::MASK, $model->{$attribute})) {
-            $model->addError($attribute, text('Неверный формат КПП'));
+            $model->addError($attribute, Yii::t('app', 'Неверный формат КПП'));
             return;
         }
     }

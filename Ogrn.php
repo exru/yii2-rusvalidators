@@ -40,18 +40,18 @@ class Ogrn extends Validator{
         $length = strlen($model->{$attribute});
 
         if ($length != self::FACTOR_13 && $length != self::FACTOR_15) {
-            $model->addError($attribute, text('ОГРН должен быть длинной 13 или 15 символов'));
+            $model->addError($attribute, Yii::t('app', 'ОГРН должен быть длинной 13 или 15 символов'));
             return;
         }
         if ($length == self::FACTOR_13) {
             if (!$this->_getOgrnFactor($model->{$attribute}, self::FACTOR_13)) {
-                $model->addError($attribute, text('Неверный ОГРН'));
+                $model->addError($attribute, Yii::t('app', 'Неверный ОГРН'));
                 return;
             }
         }
         if ($length == self::FACTOR_15) {
             if (!$this->_getOgrnFactor($model->{$attribute}, self::FACTOR_15)) {
-                $model->addError($attribute, text('Неверный ОГРН'));
+                $model->addError($attribute, Yii::t('app', 'Неверный ОГРН'));
                 return;
             }
         }

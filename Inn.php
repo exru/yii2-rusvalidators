@@ -43,20 +43,20 @@ class Inn extends Validator{
         $length = strlen($model->{$attribute});
 
         if ($length != 10 && $length != 12) {
-            $model->addError($attribute, text('ИНН должен быть длинной 10 или 12 символов'));
+            $model->addError($attribute, Yii::t('app', 'ИНН должен быть длинной 10 или 12 символов'));
             return;
         }
 
         if ($length == 10) {
             if (substr($model->{$attribute}, 9, 1) != $this->_getInnFactor($model->{$attribute}, self::$FACTOR_10)) {
-                $model->addError($attribute, text('Неверный ИНН'));
+                $model->addError($attribute, Yii::t('app', 'Неверный ИНН'));
                 return;
             }
         }
 
         if ($length == 12) {
             if (substr($model->{$attribute}, 10, 1)  != $this->_getInnFactor($model->{$attribute}, self::$FACTOR_11) || substr($model->{$attribute}, 11, 1)  != $this->_getInnFactor($model->{$attribute}, self::$FACTOR_12)) {
-                $model->addError($attribute, text('Неверный ИНН'));
+                $model->addError($attribute, Yii::t('app', 'Неверный ИНН'));
                 return;
             }
         }
