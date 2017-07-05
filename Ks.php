@@ -47,7 +47,7 @@ class Ks extends Validator {
     }
 
     public function validateAttribute($model, $attribute) {
-        if (!$model->hasAttribute($this->bikAttribute)) {
+        if (!$model->hasAttribute($this->bikAttribute) || $model->{$this->bikAttribute} == '') {
             $model->addError($attribute, Yii::t('app', 'Для проверки поля "{attribute}" необходимо заполнить БИК', [
                         'attribute' => $model->getAttributeLabel($attribute)
             ]));
